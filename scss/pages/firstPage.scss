@@ -1,0 +1,31 @@
+@import './../moduls/variables';
+@import './../moduls/function';
+@import './../moduls/mixin';
+@import './../moduls/private';
+header {
+  background-color: $red;
+  padding: 15px 0;
+  height: sum(100px,200px);
+  .flex {
+    @include display(inline-block);
+    @include flex(space-between,flex-end);
+    .logo {
+      font-size: 40px;
+    }
+    .navbar {
+      @include display (flex);
+      @include flex(center,center);
+      .navbar-li{
+        @extend %title;
+        font-size: $size03;
+        margin: 0 10px;
+      }
+    }
+  }
+  &:hover{
+    background-color: purple;
+  }
+  @media (max-width:1024px){
+    background-color: red;
+  }
+}
